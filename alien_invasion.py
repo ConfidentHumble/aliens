@@ -22,7 +22,7 @@ def run_game():
     #创建一个存储外星人的编组
     aliens = Group()
     #创建外星人群
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
     #开始游戏的循环
     while True:
         
@@ -30,7 +30,8 @@ def run_game():
         gf.check_events(ai_settings, screen, ship, bullets)
         #根据发生的事件，更新飞船的位置
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+        gf.update_aliens(ai_settings, aliens)
         #每次循环都重绘屏幕
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 

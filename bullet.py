@@ -9,7 +9,8 @@ class Bullet(Sprite):
 		self.screen = screen
 
 		#用pygame设置一个矩形：位置在(0,0) 宽和高为子弹的尺寸
-		self.rect = pygame.Rect(0, 0, 3, 15)
+		self.rect = pygame.Rect(0, 0, ai_settings.bullet_width, 
+								ai_settings.bullet_height)
 		#设置子弹的位置
 		self.rect.centerx = ship.rect.centerx
 		self.rect.top = ship.rect.top
